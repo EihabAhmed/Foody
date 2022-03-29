@@ -1,4 +1,4 @@
-package com.bbk.foody
+package com.bbk.foody.util
 
 class Constants {
     companion object {
