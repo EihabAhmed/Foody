@@ -1,4 +1,4 @@
-package com.bbk.foody
+package com.bbk.foody.data.database
 
 import androidx.room.Dao
 import androidx.room.Insert
