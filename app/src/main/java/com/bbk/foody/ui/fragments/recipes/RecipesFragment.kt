@@ -1,4 +1,4 @@
-package com.bbk.foody.ui.fragments.recips
+package com.bbk.foody.ui.fragments.recipes
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bbk.foody.R
 import com.bbk.foody.adapters.RecipesAdapter
 import com.bbk.foody.databinding.FragmentRecipesBinding
 import com.bbk.foody.util.NetworkResult
@@ -18,7 +17,6 @@ import com.bbk.foody.util.observeOnce
 import com.bbk.foody.viewmodels.MainViewModel
 import com.bbk.foody.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_recipes.view.*
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
