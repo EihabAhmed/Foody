@@ -6,6 +6,7 @@ class Constants {
         const val API_KEY = "6ae039dcca124729bd52999a64411de3"
 
         // API Query Keys
+        const val QUERY_SEARCH = "query"
         const val QUERY_NUMBER = "number"
         const val QUERY_API_KEY = "apiKey"
         const val QUERY_TYPE = "type"
