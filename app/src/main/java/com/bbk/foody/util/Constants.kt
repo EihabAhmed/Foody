@@ -3,6 +3,7 @@ package com.bbk.foody.util
 class Constants {
     companion object {
         const val BASE_URL = "https://api.spoonacular.com"
+        const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
         const val API_KEY = "6ae039dcca124729bd52999a64411de3"
 
         // API Query Keys
