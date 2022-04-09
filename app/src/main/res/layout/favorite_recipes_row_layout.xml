@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="favoritesEntity"
             type="com.bbk.foody.data.database.entities.FavoritesEntity" />
@@ -36,6 +37,7 @@
 
                 <ImageView
                     android:id="@+id/favorite_recipe_imageView"
+                    loadImageFromUrl="@{favoritesEntity.result.image}"
                     android:layout_width="200dp"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
@@ -54,27 +56,29 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/courgette"
                     android:maxLines="2"
-                    tools:text="TextView"
+                    android:text="@{favoritesEntity.result.title}"
                     android:textColor="@color/darker"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toEndOf="@+id/favorite_recipe_imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="TextView" />
 
                 <TextView
                     android:id="@+id/favorite_description_textView"
+                    parseHtml="@{favoritesEntity.result.summary}"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    tools:text="TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView "
                     android:textColor="@color/darkGray"
                     app:layout_constraintEnd_toEndOf="@+id/favorite_title_textView"
                     app:layout_constraintStart_toStartOf="@+id/favorite_title_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/favorite_title_textView" />
+                    app:layout_constraintTop_toBottomOf="@+id/favorite_title_textView"
+                    tools:text="TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView " />
 
                 <ImageView
                     android:id="@+id/favorite_heart_imageView"
@@ -91,13 +95,14 @@
 
                 <TextView
                     android:id="@+id/favorite_heart_textView"
+                    setNumberOfLikes="@{favoritesEntity.result.aggregateLikes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="100"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     app:layout_constraintStart_toStartOf="@+id/favorite_description_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/favorite_heart_imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/favorite_heart_imageView"
+                    tools:text="100" />
 
                 <ImageView
                     android:id="@+id/favorite_clock_imageView"
@@ -111,17 +116,19 @@
 
                 <TextView
                     android:id="@+id/favorite_clock_textView"
+                    setNumberOfMinutes="@{favoritesEntity.result.readyInMinutes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    tools:text="100"
                     android:textAlignment="center"
                     android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/favorite_heart_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/favorite_clock_imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/favorite_clock_imageView"
+                    tools:text="100" />
 
                 <ImageView
                     android:id="@+id/favorite_leaf_imageView"
+                    applyVeganColor="@{favoritesEntity.result.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="@+id/favorite_leaf_textView"
@@ -131,6 +138,7 @@
 
                 <TextView
                     android:id="@+id/favorite_leaf_textView"
+                    applyVeganColor="@{favoritesEntity.result.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
