@@ -1,11 +1,10 @@
 package com.bbk.foody.bindingadapters
 
 import android.view.View
-import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.bbk.foody.data.database.RecipesEntity
+import com.bbk.foody.data.database.entities.RecipesEntity
 import com.bbk.foody.models.FoodRecipe
 import com.bbk.foody.util.NetworkResult
 

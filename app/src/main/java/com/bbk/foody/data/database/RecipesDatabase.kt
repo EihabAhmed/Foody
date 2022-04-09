@@ -3,6 +3,7 @@ package com.bbk.foody.data.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.bbk.foody.data.database.entities.RecipesEntity
 
 @Database(
     entities = [RecipesEntity::class],

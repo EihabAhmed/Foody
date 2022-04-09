@@ -6,7 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
 import com.bbk.foody.data.Repository
-import com.bbk.foody.data.database.RecipesEntity
+import com.bbk.foody.data.database.entities.RecipesEntity
 import com.bbk.foody.models.FoodRecipe
 import com.bbk.foody.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
