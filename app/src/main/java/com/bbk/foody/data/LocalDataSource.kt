@@ -4,6 +4,7 @@ import com.bbk.foody.data.database.RecipesDao
 import com.bbk.foody.data.database.entities.FavoritesEntity
 import com.bbk.foody.data.database.entities.FoodJokeEntity
 import com.bbk.foody.data.database.entities.RecipesEntity
+import com.bbk.foody.models.FoodJoke
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
