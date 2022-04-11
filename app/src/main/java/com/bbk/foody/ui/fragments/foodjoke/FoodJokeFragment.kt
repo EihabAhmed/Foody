@@ -57,13 +57,13 @@ class FoodJokeFragment : Fragment() {
     }
 
     private fun loadDataFromCache() {
-//        lifecycleScope.launch {
-//            mainViewModel.readFoodJoke.observe(viewLifecycleOwner) { database ->
-//                if (database.isNotEmpty() && database != null) {
-//                    binding.foodJokeTextView.text = database[0].text
-//                }
-//            }
-//        }
+        lifecycleScope.launch {
+            mainViewModel.readFoodJoke.observe(viewLifecycleOwner) { database ->
+                if (database.isNotEmpty() && database != null) {
+                    binding.foodJokeTextView.text = database[0].foodJoke.text
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {
