@@ -59,7 +59,7 @@ class FoodJokeFragment : Fragment() {
     private fun loadDataFromCache() {
         lifecycleScope.launch {
             mainViewModel.readFoodJoke.observe(viewLifecycleOwner) { database ->
-                if (database.isNotEmpty() && database != null) {
+                if (!database.isNullOrEmpty()) {
                     binding.foodJokeTextView.text = database[0].foodJoke.text
                 }
             }
