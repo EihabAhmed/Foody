@@ -23,6 +23,8 @@
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/menu/favorite_recipes_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/menu/favorites_contextual_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/menu/recipes_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/TFS/Foody/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
+        <entry key="..\:/TFS/Foody/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2203125" />
         <entry key="..\:/TFS/Foody/app/src/main/res/layout/activity_details.xml" value="0.20416666666666666" />
         <entry key="..\:/TFS/Foody/app/src/main/res/layout/fragment_food_joke.xml" value="0.20416666666666666" />
         <entry key="..\:/TFS/Foody/app/src/main/res/layout/fragment_ingredients.xml" value="0.15670289855072464" />
@@ -31,6 +33,8 @@
         <entry key="..\:/TFS/Foody/app/src/main/res/layout/placeholder_row_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/TFS/Foody/app/src/main/res/layout/recipes_row_layout.xml" value="0.5103734439834025" />
         <entry key="..\:/TFS/Foody/app/src/main/res/menu/food_joke_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/TFS/Foody/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
+        <entry key="..\:/TFS/Foody/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2203125" />
         <entry key="..\:/Users/eihab.ahmed/AndroidStudioProjects/Foody/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/eihab.ahmed/AndroidStudioProjects/Foody/app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/eihab.ahmed/AndroidStudioProjects/Foody/app/src/main/res/layout/fragment_food_joke.xml" value="0.15217391304347827" />
