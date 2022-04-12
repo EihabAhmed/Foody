@@ -2,7 +2,6 @@ package com.bbk.foody.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.dataStore
 import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
 import com.bbk.foody.util.Constants.Companion.DEFAULT_DIET_TYPE
