@@ -16,7 +16,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
@@ -81,7 +80,7 @@ class MainViewModel @Inject constructor(
 
                 val foodRecipe = recipesResponse.value!!.data
                 if (foodRecipe != null) {
-                    offlineCachRecipes(foodRecipe)
+                    offlineCacheRecipes(foodRecipe)
                 }
             } catch (e: Exception) {
                 recipesResponse.value = NetworkResult.Error("Recipes not found.")
@@ -114,7 +113,7 @@ class MainViewModel @Inject constructor(
 
                 val foodJoke = foodJokeResponse.value!!.data
                 if (foodJoke != null) {
-                    offlineCachFoodJoke(foodJoke)
+                    offlineCacheFoodJoke(foodJoke)
                 }
             } catch (e: Exception) {
                 foodJokeResponse.value = NetworkResult.Error("Recipes not found.")
@@ -124,17 +123,17 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun offlineCachRecipes(foodRecipe: FoodRecipe) {
+    private fun offlineCacheRecipes(foodRecipe: FoodRecipe) {
         val recipesEntity = RecipesEntity(foodRecipe)
         insertRecipes(recipesEntity)
     }
 
-    private fun offlineCachFoodJoke(foodJoke: FoodJoke) {
+    private fun offlineCacheFoodJoke(foodJoke: FoodJoke) {
         val foodJokeEntity = FoodJokeEntity(foodJoke)
         insertFoodJoke(foodJokeEntity)
     }
 
-    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe>? {
+    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe> {
         when {
             response.message().toString().contains("timeout") -> {
                 return NetworkResult.Error("Timeout")
@@ -155,7 +154,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun handleFoodJokeResponse(response: Response<FoodJoke>): NetworkResult<FoodJoke>? {
+    private fun handleFoodJokeResponse(response: Response<FoodJoke>): NetworkResult<FoodJoke> {
         return when {
             response.message().toString().contains("timeout") -> {
                 NetworkResult.Error("Timeout")

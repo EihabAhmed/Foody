@@ -20,7 +20,7 @@ class FoodJokeBinding {
             apiResponse: NetworkResult<FoodJoke>?,
             database: List<FoodJokeEntity>?
         ) {
-            when (apiResponse) {
+            when (apiResponse!!) {
                 is NetworkResult.Loading -> {
                     when (view) {
                         is ProgressBar -> {

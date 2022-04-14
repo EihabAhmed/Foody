@@ -1,7 +1,7 @@
 package com.bbk.foody.di
 
-import com.bbk.foody.util.Constants.Companion.BASE_URL
 import com.bbk.foody.data.network.FoodRecipesApi
+import com.bbk.foody.util.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

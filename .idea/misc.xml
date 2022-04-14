@@ -5,8 +5,27 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable-xxxhdpi/background_primary_color_border.xml" value="0.208" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/gradient_overlay.xml" value="0.251" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_checkmark.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_clock.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_delete.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_food_joke.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_food_joke_background_dark.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_food_joke_background_light.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_heart.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_launcher_background.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_leaf.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_menu_book.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_restaurant.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_sad.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_search.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_share.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/drawable/ic_star.xml" value="0.208" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/font/courgette.xml" value="0.284375" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/layout-night/fragment_food_joke.xml" value="0.2105978260869565" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/layout/activity_details.xml" value="0.2105978260869565" />
+        <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/layout/favorite_recipes_row_layout.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/layout/fragment_favorite_recipes.xml" value="0.4742468415937804" />
         <entry key="..\:/AndroidStudioProjects/Foody/app/src/main/res/layout/fragment_food_joke.xml" value="0.176" />

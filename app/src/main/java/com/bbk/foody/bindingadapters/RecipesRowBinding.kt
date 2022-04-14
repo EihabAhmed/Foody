@@ -13,7 +13,6 @@ import com.bbk.foody.R
 import com.bbk.foody.models.Result
 import com.bbk.foody.ui.fragments.recipes.RecipesFragmentDirections
 import org.jsoup.Jsoup
-import java.lang.Exception
 
 class RecipesRowBinding {
 
