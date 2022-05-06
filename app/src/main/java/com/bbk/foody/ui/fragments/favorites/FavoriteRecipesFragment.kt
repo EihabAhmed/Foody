@@ -2,6 +2,7 @@ package com.bbk.foody.ui.fragments.favorites
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,10 +15,12 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FavoriteRecipesFragment : Fragment() {
+class FavoriteRecipesFragment : Fragment(), ActionMode.Callback {
 
     private val mainViewModel: MainViewModel by viewModels()
-    private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter(requireActivity(), mainViewModel) }
+    private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter(this) }
+
+    private lateinit var mActionMode: ActionMode
 
     private var _binding: FragmentFavoriteRecipesBinding? = null
     private val binding get() = _binding!!
@@ -46,7 +49,7 @@ class FavoriteRecipesFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.deleteAll_favorite_recipes_menu) {
             mainViewModel.deleteAllFavoriteRecipes()
-            showSnackBar()
+            showSnackBar("All recipes removed.")
         }
 
         return super.onOptionsItemSelected(item)
@@ -57,10 +60,10 @@ class FavoriteRecipesFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
-    private fun showSnackBar() {
+    private fun showSnackBar(message: String) {
         Snackbar.make(
             binding.root,
-            "All recipes removed.",
+            message,
             Snackbar.LENGTH_SHORT
         ).setAction("Okay") {}
             .show()
@@ -69,6 +72,69 @@ class FavoriteRecipesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        mAdapter.clearContextualActionMode()
+        clearContextualActionMode()
+    }
+
+    override fun onCreateActionMode(actionMode: ActionMode?, menu: Menu?): Boolean {
+        actionMode?.menuInflater?.inflate(R.menu.favorites_contextual_menu, menu)
+        mActionMode = actionMode!!
+        applyStatusBarColor(R.color.contextualStatusBarColor)
+        return true
+    }
+
+    override fun onPrepareActionMode(actionMode: ActionMode?, menu: Menu?): Boolean {
+        return true
+    }
+
+    override fun onActionItemClicked(actionMode: ActionMode?, menu: MenuItem?): Boolean {
+
+        if (menu?.itemId == R.id.delete_favorite_recipe_menu) {
+            mAdapter.selectedRecipes.forEach {
+                mainViewModel.deleteFavoriteRecipe(it)
+            }
+
+            showSnackBar("${mAdapter.selectedRecipes.size} Recipe/s removed.")
+            mAdapter.multiSelection = false
+            mAdapter.selectedRecipes.clear()
+            actionMode?.finish()
+        }
+
+        return true
+    }
+
+    override fun onDestroyActionMode(actionMode: ActionMode?) {
+
+        mAdapter.myViewHolders.forEach { holder ->
+            mAdapter.changeRecipeStyle(holder, R.color.cardBackgroundColor, R.color.strokeColor)
+        }
+
+        mAdapter.multiSelection = false
+        mAdapter.selectedRecipes.clear()
+        applyStatusBarColor(R.color.statusBarColor)
+    }
+
+    private fun applyStatusBarColor(color: Int) {
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireActivity(), color)
+    }
+
+    fun applyActionModeTitle() {
+        when (mAdapter.selectedRecipes.size) {
+            0 -> {
+                mActionMode.finish()
+                mAdapter.multiSelection = false
+            }
+            1 -> {
+                mActionMode.title = "1 item selected"
+            }
+            else -> {
+                mActionMode.title = "${mAdapter.selectedRecipes.size} items selected"
+            }
+        }
+    }
+
+    private fun clearContextualActionMode() {
+        if (this::mActionMode.isInitialized) {
+            mActionMode.finish()
+        }
     }
 }
